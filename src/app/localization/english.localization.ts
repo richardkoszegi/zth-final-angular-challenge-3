@@ -9,4 +9,6 @@ export const ENGLISH: {name: string, value: string}[] = [
     {name: 'newCategory', value: 'New Category'},
     {name: 'name', value: 'Name'},
     {name: 'changeLang', value: 'Váltás magyarra'},
+    {name: 'filter', value: 'Filter'},
+    {name: 'all', value: 'All'},
 ]

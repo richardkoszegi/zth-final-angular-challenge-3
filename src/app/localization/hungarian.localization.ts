@@ -9,4 +9,6 @@ export const HUNGARIAN: {name: string, value: string}[] = [
     {name: 'newCategory', value: 'Új Kategória'},
     {name: 'name', value: 'Név'},
     {name: 'changeLang', value: 'Switch to english'},
+    {name: 'filter', value: 'Szűrés'},
+    {name: 'all', value: 'Mind'},
 ]

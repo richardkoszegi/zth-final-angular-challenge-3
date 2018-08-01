@@ -14,6 +14,22 @@ export class AppComponent {
 
   categories: string[] = ['ÉTEL', 'SZÓRAKOZÁS', 'LAKHATÁS'];
 
+  filteredCategory: string = null;
+
+  get displayedExpenses(): Expense[] {
+    if (this.filteredCategory !== null) {
+      const displayedList = [];
+      for( const exp of this.expenses) {
+        if (exp.type === this.filteredCategory) {
+          this.displayedExpenses.push(exp);
+        }
+      }
+      return displayedList;
+    } else {
+      return this.expenses;
+    }
+  }
+
   constructor(private localizationService: LocalizationService) {}
 
   addExpense(date: Date, description: string, amount: number, type: string) {

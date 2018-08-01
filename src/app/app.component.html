@@ -1,5 +1,12 @@
 <button (click)="changeLanguage()" class="btn">{{'changeLang' | localize}}</button>
 <h2>{{'expenses' | localize}}</h2>
+
+<label for="filteredCategoryInput">{{'filter' | localize}}</label>
+<select id="filteredCategoryInput" class="form-control" [(ngModel)]="filteredCategory">
+    <option [ngValue]="null">{{'all' | localize}}</option>
+    <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
+  </select>
+
 <div class="container">
   <table class="table">
     <thead>
