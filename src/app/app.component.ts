@@ -11,6 +11,8 @@ export class AppComponent {
 
   expenses: Expense[] = [];
 
+  categories: string[] = ['ÉTEL', 'SZÓRAKOZÁS', 'LAKHATÁS'];
+
   addExpense(date: Date, description: string, amount: number, type: string) {
     this.expenses.push(new Expense(date, description, amount, type));
   }
