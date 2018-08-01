@@ -16,4 +16,8 @@ export class AppComponent {
   addExpense(date: Date, description: string, amount: number, type: string) {
     this.expenses.push(new Expense(date, description, amount, type));
   }
+
+  deleteExpense(expense: Expense) {
+    this.expenses.splice(this.expenses.indexOf(expense), 1);
+  }
 }

@@ -16,6 +16,7 @@
         <td>{{expense.type}}</td>
         <td>{{expense.description}}</td>
         <td>{{expense.amount}}</td>
+        <td><button (click)="deleteExpense(expense)" class="btn btn-danger">Törlés</button></td>
       </tr>
     </tbody>
 </table>
