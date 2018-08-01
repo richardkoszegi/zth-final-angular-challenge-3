@@ -4,6 +4,7 @@
     <thead>
       <tr>
         <th>Dátum</th>
+        <th>Típus</th>
         <th>Megjegyzés</th>
         <th>Költség</th>
       </tr>
@@ -12,6 +13,7 @@
     <tbody>
       <tr *ngFor="let expense of expenses">
         <td>{{expense.date}}</td>
+        <td>{{expense.type}}</td>
         <td>{{expense.description}}</td>
         <td>{{expense.amount}}</td>
       </tr>
@@ -19,8 +21,17 @@
 </table>
 
 <h2>Új kiadás</h2>
-<form (ngSubmit)="addExpense(dateInput.value, descriptionInput.value, amountInput.value); f.reset()" #f="ngForm">
+<form (ngSubmit)="addExpense(dateInput.value, descriptionInput.value, amountInput.value, typeInput.value); f.reset()" #f="ngForm">
 
+    <div class="form-group">
+        <label for="typeInput">Típus</label>
+        <select id="typeInput" class="form-control" name="typeInput" ngModel #typeInput>
+            <option>ÉTEL</option>
+            <option>SZÓRAKOZÁS</option>
+            <option>LAKHATÁS</option>
+          </select>
+      </div>
+  
       <div class="form-group">
         <label for="dateInput">Dátum</label>
         <input id="dateInput"

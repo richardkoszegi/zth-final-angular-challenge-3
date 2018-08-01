@@ -11,7 +11,7 @@ export class AppComponent {
 
   expenses: Expense[] = [];
 
-  addExpense(date: Date, description: string, amount: number) {
-    this.expenses.push(new Expense(date, description, amount));
+  addExpense(date: Date, description: string, amount: number, type: string) {
+    this.expenses.push(new Expense(date, description, amount, type));
   }
 }
