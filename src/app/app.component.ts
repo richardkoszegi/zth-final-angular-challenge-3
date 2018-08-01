@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Expense } from './model/expense.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'feladat3';
+
+  expenses: Expense[] = [];
+
+  addExpense(date: Date, description: string, amount: number) {
+    this.expenses.push(new Expense(date, description, amount));
+  }
 }
