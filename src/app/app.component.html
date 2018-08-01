@@ -1,12 +1,13 @@
-<h2>Költségek</h2>
+<button (click)="changeLanguage()" class="btn">{{'changeLang' | localize}}</button>
+<h2>{{'expenses' | localize}}</h2>
 <div class="container">
   <table class="table">
     <thead>
       <tr>
-        <th>Dátum</th>
-        <th>Típus</th>
-        <th>Megjegyzés</th>
-        <th>Költség</th>
+        <th>{{'date' | localize}}</th>
+        <th>{{'type' | localize}}</th>
+        <th>{{'description' | localize}}</th>
+        <th>{{'amount' | localize}}</th>
       </tr>
     </thead>
 
@@ -21,41 +22,41 @@
     </tbody>
 </table>
 
-<h2>Új kiadás</h2>
+<h2>{{'newExpense' | localize}}</h2>
 <form (ngSubmit)="addExpense(dateInput.value, descriptionInput.value, amountInput.value, typeInput.value); f.reset()" #f="ngForm">
 
     <div class="form-group">
-        <label for="typeInput">Típus</label>
+        <label for="typeInput">{{'type' | localize}}</label>
         <select id="typeInput" class="form-control" name="typeInput" ngModel #typeInput>
             <option *ngFor="let category of categories">{{category}}</option>
           </select>
       </div>
   
       <div class="form-group">
-        <label for="dateInput">Dátum</label>
+        <label for="dateInput">{{'date' | localize}}</label>
         <input id="dateInput"
             type="date"
-             placeholder="Dátum"
+             placeholder="{{'date' | localize}}"
              class="form-control"
              name="dateInput"
              ngModel required #dateInput>
       </div>
 
       <div class="form-group">
-          <label for="description">Leírás</label>
+          <label for="description">{{'description' | localize}}</label>
           <input id="description"
               type="text"
-               placeholder="Leírás"
+               placeholder="{{'description' | localize}}"
                class="form-control"
                name="description"
                ngModel required #descriptionInput>
         </div>
 
         <div class="form-group">
-            <label for="amountInput">Mennyiség</label>
+            <label for="amountInput">{{'amount' | localize}}</label>
             <input id="amountInput"
                 type="number"
-                 placeholder="Mennyiség"
+                 placeholder="{{'amount' | localize}}"
                  class="form-control"
                  name="amountInput"
                  ngModel required #amountInput>
@@ -68,21 +69,21 @@
                 class="btn btn-success"
                 type="submit"
                 [disabled]="!f.valid">
-          Hozzáad
+                {{'add' | localize}}
         </button>
       </div>
     </div>
   </form>
 
-  <h2>Új kategória</h2>
+  <h2>{{'newCategory' | localize}}</h2>
 <form (ngSubmit)="categories.push(categoryInput.value); categoryForm.reset()" #categoryForm="ngForm">
 
 
       <div class="form-group">
-          <label for="categoryInput">Leírás</label>
+          <label for="categoryInput">{{'name' | localize}}</label>
           <input id="categoryInput"
               type="text"
-               placeholder="Név"
+               placeholder="{{'name' | localize}}"
                class="form-control"
                name="description"
                ngModel required #categoryInput>
@@ -94,7 +95,7 @@
         <button class="btn btn-success"
                 type="submit"
                 [disabled]="!categoryForm.valid">
-          Hozzáad
+                {{'add' | localize}}
         </button>
       </div>
     </div>
